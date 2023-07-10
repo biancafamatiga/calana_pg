@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 05, 2023 at 07:57 PM
+-- Generation Time: Jul 10, 2023 at 07:07 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -24,44 +24,66 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `calana_table`
+-- Table structure for table `calana_users`
 --
 
-CREATE TABLE `calana_table` (
-  `id` int(50) NOT NULL,
-  `playerid` varchar(15) NOT NULL,
+CREATE TABLE `calana_users` (
+  `id` int(15) NOT NULL,
+  `player_id` varchar(15) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `calana_table`
+-- Dumping data for table `calana_users`
 --
 
-INSERT INTO `calana_table` (`id`, `playerid`, `email`, `password`) VALUES
-(1, '000000000000', 'bfmtg313@gmail.com', '123'),
-(2, '000000000000', 'sample@gmail.com', '123'),
-(3, '123456789000', 'bfmtg313@gmail.com', '123');
+INSERT INTO `calana_users` (`id`, `player_id`, `email`, `password`) VALUES
+(16, '1111-1111-1111', 'bfmtg313@gmail.com', 'slay');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `items`
+--
+
+CREATE TABLE `items` (
+  `item_id` int(15) NOT NULL,
+  `item_name` varchar(50) NOT NULL,
+  `item_price` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `calana_table`
+-- Indexes for table `calana_users`
 --
-ALTER TABLE `calana_table`
+ALTER TABLE `calana_users`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `items`
+--
+ALTER TABLE `items`
+  ADD PRIMARY KEY (`item_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `calana_table`
+-- AUTO_INCREMENT for table `calana_users`
 --
-ALTER TABLE `calana_table`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `calana_users`
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `items`
+--
+ALTER TABLE `items`
+  MODIFY `item_id` int(15) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
