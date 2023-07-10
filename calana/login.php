@@ -1,3 +1,4 @@
+
 <?php
     session_start();
     require_once("conn.php");
@@ -93,69 +94,45 @@
 
 <div class="Section_top">
         <div class="content">
-            <h1>SIGN UP</h1>
+            <h1>LOGIN</h1>
         </div>
         
         <div class="container">
-            <form action="validate_signup.php" method="post" autocomplete="on">
-            Player ID <br> 
-            <div class ="pid">
-            <input name="pid1" id="pid1" type="text" class="form-control" placeholder="XXXX" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" minlength="4" maxlength="4" required>
-            -
-            <input name="pid2" id="pid2" type="text" class="form-control" placeholder="XXXX" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" minlength="4" maxlength="4"required>
-            -
-            <input name="pid3" id="pid4" type="text" class="form-control" placeholder="XXXX"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" minlength="4" maxlength="4"required>
-            </div>
+            <form action="validate_login.php" method="post" autocomplete="on">
             Email <br> 
             <input type="text" name="email" class="form-control"  placeholder="sample@gmail.com"><br>
             Password <br> 
             <input type="password" name="password" class="form-control"><br>
-            Confirm Password <br> 
-            <input type="password" name="conpass" class="form-control"><br>
-
+            <div>
             <?php
-                        if (isset($_SESSION['existing_email'])) :
+                        if (isset($_SESSION['notfound_email'])) :
                     ?>
                     <div class="alert alert-danger" role="alert">
                         <?php
-                            if (isset($_SESSION['existing_email'])) :
-                                echo $_SESSION['existing_email'];
-                                unset($_SESSION['existing_email']);
+                            if (isset($_SESSION['notfound_email'])) :
+                                echo $_SESSION['notfound_email'];
+                                unset($_SESSION['notfound_email']);
                             endif;
                         ?>
                     </div>
                     <?php
                         endif;
-                        if (isset($_SESSION['error_email'])) :
+                        if (isset($_SESSION['error_pass'])) :
                     ?>
                     <div class="alert alert-danger" role="alert">
                         <?php
-                            if (isset($_SESSION['error_email'])) :
-                                echo $_SESSION['error_email'];
-                                unset($_SESSION['error_email']);
-                            endif;
-                        ?>
-                    </div>
-                    <?php
-                        endif;
-                        if (isset($_SESSION['error_conpass'])) :
-                    ?>
-                    <div class="alert alert-danger" role="alert">
-                        <?php
-                            if (isset($_SESSION['error_conpass'])) :
-                                echo $_SESSION['error_conpass'];
-                                unset($_SESSION['error_conpass']);
+                            if (isset($_SESSION['error_pass'])) :
+                                echo $_SESSION['error_pass'];
+                                unset($_SESSION['error_pass']);
                             endif;
                         ?>
                     </div>
                     <?php
                         endif;
                     ?>
+                    </div>
 
-            <input type="submit"  class="btn btn-primary" value="Sign Up"><br>
-
-            Already Registered?
-            <input type="button" id="bt" class="btn btn-primary" value="Login" onclick="location='login.php' " />
+            <input type="submit"  class="btn btn-primary" value="Login"><br>
     </div> 
 </div>
     
