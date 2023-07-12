@@ -71,7 +71,7 @@
       <div class="navbar-nav">
         <a class="nav-link " aria-current="page" href="home.php"  id="navs1">HOME</a>
         <a class="nav-link" href="store.php"  id="navs2">STORE</a>
-        <a class="nav-link" href="about.php" id="navs3">ABOUT US</a>
+        <a class="nav-link" href="about.php" id="navs3">MEET CALANA</a>
         <a class="nav-link" href="cart.php" id="navs4"> MY CART </a>
         <a class="nav-link" href="account.php" id="navs5"> ACCOUNT </a>
       </div>
