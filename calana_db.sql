@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2023 at 04:47 PM
+-- Generation Time: Jul 13, 2023 at 07:01 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -39,7 +39,10 @@ CREATE TABLE `calana_users` (
 --
 
 INSERT INTO `calana_users` (`id`, `player_id`, `email`, `password`) VALUES
-(16, '1111-1111-1111', 'bfmtg313@gmail.com', 'slay');
+(16, '1111-1111-1111', 'bfmtg313@gmail.com', 'slay'),
+(17, '1234-1234-1234', 'lisa@gmail.com', '1020'),
+(18, '0000-0000-0000', 'slayerage@gmail.com', 'qqqq'),
+(19, '2222-2222-2222', 'ysabelfam@gmail.com', 'aaaa');
 
 -- --------------------------------------------------------
 
@@ -116,7 +119,7 @@ ALTER TABLE `items`
 -- AUTO_INCREMENT for table `calana_users`
 --
 ALTER TABLE `calana_users`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `items`
