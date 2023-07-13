@@ -43,8 +43,8 @@
 	border-radius: 20px;
 	padding: 10px;
 	width: 700px;
-	margin: 50px auto;
-    position:relative; right:300px; top:80px;
+	margin: 0 auto;
+    position:relative; right:200px; top:80px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); 
 }
 input[type=text]{
@@ -114,17 +114,16 @@ input[type=button]:hover {
     animation: change 10s infinite ease-in-out;
 }
 .content{
-    position: absolute;
+    position: center;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     text-transform: uppercase;
 
 }
 h1{
-    position: relative;
-    right:290px;
-    bottom:300px;
+    color: #fff;
+    font-size: 60px;
+    letter-spacing: 15px;
 }
 .content h1{
     color: #fff;
@@ -180,11 +179,12 @@ h1{
 <body>
 
 <div class="Section_top">
-        <div class="content">
-            <h1>SIGN UP</h1>
-        </div>
             <div class = "sign-up-container">
+                <div class="content">
+                        <h1>SIGN UP</h1>
+                     </div>
                 <div class="container">
+                    
                     <form action="validate_signup.php" method="post" autocomplete="on">
                     Player ID <br> 
                         <div class ="pid">
