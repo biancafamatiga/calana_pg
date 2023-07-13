@@ -21,7 +21,22 @@
     height: 100vh;
     font-family: sans-serif;
 }
+@media screen and (max-width: 768px) {
+            .sign-up-container {
+                width: 90%;
+                right: auto;
+                top: 20px;
+            }
 
+            h1 {
+                right: 0;
+                bottom: 0;
+            }
+
+            input[type=text], input[type=password] {
+                width: 100%;
+            }
+        }
 .sign-up-container {
     backdrop-filter: blur(10px);
 	background-color: rgba(255, 255, 255, 0.2); 
@@ -33,23 +48,26 @@
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); 
 }
 input[type=text]{
-    width: 20%;
-     padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #e6e2d3;
-  border-radius: 10px;
-  box-sizing: border-box;
-
-}
-input[type=text], [type=password] {
-  width: 50%;
+   width: 20%%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #e6e2d3;
   border-radius: 10px;
   box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.5); 
+  
+
+}
+input[type=text], [type=password] {
+    width: 20%%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #e6e2d3;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.5); 
 }
 
 input[type=submit] {
