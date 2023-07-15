@@ -243,7 +243,7 @@ h1{
                     <input type="submit"  class="btn btn-primary" value="Sign Up"><br>
 
                     Already Registered?
-                    <input type="button" id="bt" class="btn btn-primary" value="Login" onclick="location='login.php' " />
+                    <input type="button" id="bt" class="btn btn-primary" value="Login" onclick="location='index.php' " />
                 </div>
    
     

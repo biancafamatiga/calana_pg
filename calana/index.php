@@ -56,6 +56,10 @@
     text-transform: uppercase;
 
 }
+
+a{
+    text-decoration: none;
+}
 .content h1{
     color: #fff;
     font-size: 60px;
@@ -169,6 +173,7 @@ input[type=submit]:hover {
         <div class="content">
             <h1>LOGIN</h1>
         </div>
+        
         <div class="container">
             <form action="validate_login.php" method="post" autocomplete="on">
             Email <br> 
@@ -205,6 +210,7 @@ input[type=submit]:hover {
                     </div>
 
             <input type="submit"  class="btn btn-primary" value="Login"><br>
+            <a href="signup.php" >Sign Up!</a>
     </div> 
 </div>
     

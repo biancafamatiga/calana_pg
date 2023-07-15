@@ -39,7 +39,7 @@
                 die("Query failed: " . $conn->error);
             }else{
                 // LOGIN
-                header("Location: login.php");
+                header("Location: index.php");
                 exit();
             }
         }

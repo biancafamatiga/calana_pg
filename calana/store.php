@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require("include/navbar.php");
+    
     ?>
 
 <!DOCTYPE html>
@@ -78,7 +78,12 @@
   justify-content: center;
   margin-top: 20px;
 }
-
+.items-title {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333;
+}
 .checkout-button {
   padding: 10px 20px;
   font-size: 16px;
@@ -89,12 +94,7 @@
   cursor: pointer;
 }
 
-.items-title {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 24px;
-  color: #333;
-}
+
 
 .item-container:hover {
   transform: scale(1.1);
@@ -340,10 +340,26 @@
     $item_price = $item['item_price'];
 
     // Add to cart
-    if (isset($_POST['additem'])) {
-        $added_item = $_POST['item_id'];
-        $_SESSION['cart'][] = $items[$selected_item]['item_name'];
-    }
+    // if (isset($_POST['additem'])) {
+    //     $added_item = $_POST['item_id'];
+    //     $_SESSION['cart'][] = $items[$selected_item]['item_name'];
+    // }
+
+    if (!isset($_SESSION['cart'])) {
+      $_SESSION['cart'] = array();
+  }
+  
+  if (isset($_POST['additem'])) {
+      $added_item = $_POST['item_id'];
+      $item = array(
+          'item_name' => $store_items[$added_item]['item_name'],
+          'item_image' => $store_items[$added_item]['item_image'],
+          'item_price' => $store_items[$added_item]['item_price']
+      );
+      $_SESSION['cart'][] = $item;
+  }
+  require("include/navbar.php");
+
 ?>
 
 <div class="container flex-1 w-80">
@@ -359,8 +375,11 @@
                     </div>
                     <div class="add-cart">
                         <form method="post">
+                        <input type="hidden" name="item_id" value="<?= $key ?>">
+                        <input type="hidden" name="item_image" value="<?= $item['item_image'] ?>">
+
                             <input type="hidden" name="item_id" value="<?= $key ?>">
-                            <input type="submit" name="added_item" value="Add to Cart">
+                            <input type="submit" name="additem" value="Add to Cart">
                         </form>
                     </div>
                 </div>
@@ -368,7 +387,7 @@
         <?php } ?>
     </div>
     <div class="checkout-container">
-        <form method="post" action="payment.php">
+        <form method="post" action="cart.php">
             <button type="submit" name="payment" class="checkout-button">Checkout</button>
         </form>
     </div>
